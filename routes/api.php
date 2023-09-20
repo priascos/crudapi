@@ -18,7 +18,8 @@ use App\Http\Controllers\API\ResearchersController;
 Route::prefix('orcid')->group(function () {
     // return $request->user();
     Route::get('/list',[ResearchersController::class, 'list']);
-    Route::post('/create',[ResearchersController::class, 'create']);
+    Route::get('/create/{orcid}',[ResearchersController::class, 'create']);
+    Route::post('/form',[ResearchersController::class, 'form']);
     Route::delete('/delete/{orcid}',[ResearchersController::class, 'delete']);
     Route::get('/{orcid}',[ResearchersController::class, 'detail']);
     // Route::put('/{orcid}',[ ResearchersController::class, 'update']);
